@@ -2,6 +2,12 @@
     <string name="app_name">InverseSport</string>
     <string name="map">Карта</string>
     <string name="afisha">Афиша</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="login">Войти</string>
+    <string name="login_text">Входя в систему, вы принимаете</string>
+    <string name="login_text_2">пользовательское соглашение</string>
+    <string name="email">Почта</string>
+    <string name="password">Пароль</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

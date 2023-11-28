@@ -30,8 +30,8 @@ class SplashScreenFragment : Fragment() {
         binding!!.imageSplashScreen.animation = anim
         Handler().postDelayed(Runnable {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            val bottomNavBarFragment = BottomNavBarFragment()
-            transaction.replace(R.id.layout_fragment, bottomNavBarFragment)
+            val loginFragment = LoginFragment()
+            transaction.replace(R.id.layout_fragment, loginFragment)
             transaction.disallowAddToBackStack()
             transaction.commit()
         }, 3000)
