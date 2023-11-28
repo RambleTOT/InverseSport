@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".SignupFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/login_singnup_bottom"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="32dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:src="@drawable/image_inverse_sport_title" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="@font/mont_semibold"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:letterSpacing="0.02"
+            android:maxLines="1"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="8dp"
+            android:textColor="@color/edit_text"
+            android:textColorHint="@color/text_description"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="@font/mont_semibold"
+            android:hint="@string/surname"
+            android:inputType="text"
+            android:letterSpacing="0.02"
+            android:maxLines="1"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="8dp"
+            android:textColor="@color/edit_text"
+            android:textColorHint="@color/text_description"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="@font/mont_semibold"
+            android:hint="@string/age"
+            android:inputType="numberDecimal"
+            android:letterSpacing="0.02"
+            android:maxLines="1"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="8dp"
+            android:textColor="@color/edit_text"
+            android:textColorHint="@color/text_description"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="@font/mont_semibold"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:letterSpacing="0.02"
+            android:maxLines="1"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="8dp"
+            android:textColor="@color/edit_text"
+            android:textColorHint="@color/text_description"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="@font/mont_semibold"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:letterSpacing="0.02"
+            android:maxLines="1"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="8dp"
+            android:textColor="@color/edit_text"
+            android:textColorHint="@color/text_description"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/text_main"
+            android:fontFamily="@font/mont_semibold"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp"
+            android:text="@string/to_sign_up"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:cornerRadius="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login_singnup_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="60dp"
+        android:layout_marginHorizontal="32dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_finish_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            app:cornerRadius="15dp"
+            android:paddingVertical="16dp"
+            android:textColor="@color/text_main"
+            android:textSize="16sp"
+            android:fontFamily="@font/mont_semibold"
+            android:text="@string/login_up"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/text_main"
+            android:backgroundTint="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/text_description"
+            android:text="@string/login_text"
+            android:fontFamily="@font/mont_semibold"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/text_main"
+            android:text="@string/login_text_2"
+            android:fontFamily="@font/mont_semibold"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

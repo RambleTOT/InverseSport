@@ -4,10 +4,15 @@
     <string name="afisha">Афиша</string>
     <string name="sign_up">Регистрация</string>
     <string name="login">Войти</string>
+    <string name="login_up">Вход</string>
     <string name="login_text">Входя в систему, вы принимаете</string>
     <string name="login_text_2">пользовательское соглашение</string>
     <string name="email">Почта</string>
     <string name="password">Пароль</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="age">Возраст</string>
+    <string name="to_sign_up">Зарегистрироваться</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
