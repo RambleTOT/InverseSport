@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/layout_fragment"
-    tools:context=".MainActivity">
+    tools:context=".presentation.activity.MainActivity">
 
 </LinearLayout>

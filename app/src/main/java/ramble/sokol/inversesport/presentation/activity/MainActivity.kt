@@ -1,13 +1,12 @@
-package ramble.sokol.inversesport
+package ramble.sokol.inversesport.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.yandex.mapkit.MapKitFactory
-import com.yandex.mapkit.geometry.Point
-import com.yandex.mapkit.map.CameraPosition
-import com.yandex.mapkit.mapview.MapView
+import ramble.sokol.inversesport.R
+import ramble.sokol.inversesport.presentation.fragment.SplashScreenFragment
 
 class MainActivity : AppCompatActivity() {
 

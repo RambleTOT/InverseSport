@@ -1,10 +1,11 @@
-package ramble.sokol.inversesport
+package ramble.sokol.inversesport.presentation.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ramble.sokol.inversesport.R
 import ramble.sokol.inversesport.databinding.FragmentBottomNavBarBinding
 
 class BottomNavBarFragment : Fragment() {

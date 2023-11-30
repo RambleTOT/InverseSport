@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment"
+    tools:context=".presentation.fragment.LoginFragment"
     android:background="@color/white">
 
     <LinearLayout
@@ -21,6 +21,7 @@
             android:src="@drawable/image_inverse_sport_title"/>
 
         <EditText
+            android:id="@+id/edit_login_email"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/edit_text_background"
@@ -37,6 +38,7 @@
             android:layout_marginTop="16dp"/>
 
         <EditText
+            android:id="@+id/edit_login_password"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
@@ -86,7 +88,7 @@
         android:layout_marginHorizontal="32dp">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_finish_signup"
+            android:id="@+id/button_to_registration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="16dp"

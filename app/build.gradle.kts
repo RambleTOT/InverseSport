@@ -51,4 +51,10 @@ dependencies {
 
     // Yandex Map
     implementation("com.yandex.android:maps.mobile:4.4.0-full")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:converter-scalars:2.1.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.5.0")
 }
