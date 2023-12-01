@@ -44,7 +44,7 @@ class LoginFragment : Fragment() {
         firstEntryManager = FirstEntryManager(requireActivity())
         binding!!.buttonToRegistration.setOnClickListener {
             val fragmentTransition = parentFragmentManager.beginTransaction()
-            fragmentTransition.replace(R.id.frame_layout, SignupFragment())
+            fragmentTransition.replace(R.id.layout_fragment , SignupFragment())
             fragmentTransition.commit()
         }
         binding!!.buttonLogin.setOnClickListener {

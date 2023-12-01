@@ -22,6 +22,7 @@
             android:src="@drawable/image_inverse_sport_title" />
 
         <EditText
+            android:id="@+id/edit_name_signup"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
@@ -38,6 +39,7 @@
             android:textSize="16sp" />
 
         <EditText
+            android:id="@+id/edit_surname_signup"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
@@ -54,6 +56,7 @@
             android:textSize="16sp" />
 
         <EditText
+            android:id="@+id/edit_age_signup"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
@@ -70,6 +73,7 @@
             android:textSize="16sp" />
 
         <EditText
+            android:id="@+id/edit_email_signup"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
@@ -86,6 +90,7 @@
             android:textSize="16sp" />
 
         <EditText
+            android:id="@+id/edit_password_signup"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
@@ -102,7 +107,7 @@
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/button_login"
+            android:id="@+id/button_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -127,7 +132,7 @@
         android:layout_marginHorizontal="32dp">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_finish_signup"
+            android:id="@+id/button_to_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="16dp"
