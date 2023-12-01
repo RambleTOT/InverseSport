@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import ramble.sokol.inverseeducation.presentation.manager.FirstEntryManager
 import ramble.sokol.inverseeducation.presentation.manager.RetrofitHelper
 import ramble.sokol.inverseeducation.presentation.manager.TokenManager
@@ -48,8 +49,36 @@ class LoginFragment : Fragment() {
             fragmentTransition.commit()
         }
         binding!!.buttonLogin.setOnClickListener {
-            loginRequest(binding!!.editLoginEmail.text.toString(), binding!!.editLoginPassword.text.toString())
+            if (binding!!.editLoginEmail.text.toString() == ""){
+                binding!!.editLoginEmail.setBackgroundResource(R.drawable.edit_text_background_error)
+            }
+            if ( binding!!.editLoginPassword.text.toString() == ""){
+                binding!!.editLoginPassword.setBackgroundResource(R.drawable.edit_text_background_error)
+            }else if (binding!!.editLoginEmail.text.toString() != "" && binding!!.editLoginPassword.text.toString() != "" ) {
+                loginRequest(
+                    binding!!.editLoginEmail.text.toString(),
+                    binding!!.editLoginPassword.text.toString()
+                )
+            }
         }
+        binding!!.editLoginEmail.setOnFocusChangeListener { view, b ->
+            notErrorEdit()
+        }
+        binding!!.editLoginPassword.setOnFocusChangeListener { view, b ->
+            notErrorEdit()
+        }
+        binding!!.editLoginEmail.addTextChangedListener {
+            notErrorEdit()
+        }
+        binding!!.editLoginPassword.addTextChangedListener {
+            notErrorEdit()
+        }
+    }
+
+    private fun notErrorEdit(){
+        binding!!.textErrorLogin.visibility = View.GONE
+        binding!!.editLoginEmail.setBackgroundResource(R.drawable.edit_text_background)
+        binding!!.editLoginPassword.setBackgroundResource(R.drawable.edit_text_background)
     }
 
     private fun loginRequest(email: String, password: String){
@@ -67,7 +96,7 @@ class LoginFragment : Fragment() {
                     transaction.disallowAddToBackStack()
                     transaction.commit()
                 } else {
-                    //binding!!.textErrorLogin.visibility = View.VISIBLE
+                    binding!!.textErrorLogin.visibility = View.VISIBLE
                 }
             }
 

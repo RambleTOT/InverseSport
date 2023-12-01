@@ -7,4 +7,5 @@
     <color name="text_title">#191919</color>
     <color name="back_edit_text">#F8F8FA</color>
     <color name="edit_text">#0F0F0F</color>
+    <color name="error">#F36359</color>
 </resources>
