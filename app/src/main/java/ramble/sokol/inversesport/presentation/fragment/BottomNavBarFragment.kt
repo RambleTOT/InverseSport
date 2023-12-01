@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ramble.sokol.inversesport.ProfileFragment
 import ramble.sokol.inversesport.R
 import ramble.sokol.inversesport.databinding.FragmentBottomNavBarBinding
 
@@ -30,6 +31,7 @@ class BottomNavBarFragment : Fragment() {
             when (it.itemId){
                 R.id.navbar_afisha -> replaceFragment(AfishaFragment())
                 R.id.navbar_map -> replaceFragment(MapFragment())
+                R.id.navbar_profile -> replaceFragment(ProfileFragment())
                 else -> {}
             }
             true

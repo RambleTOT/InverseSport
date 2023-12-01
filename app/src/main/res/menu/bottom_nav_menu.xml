@@ -12,4 +12,10 @@
         android:title="@string/map"
         android:icon="@drawable/icon_map"
         />
+
+    <item
+        android:id="@+id/navbar_profile"
+        android:title="@string/map"
+        android:icon="@drawable/icon_profile"
+        />
 </menu>
