@@ -72,6 +72,17 @@
             android:textColorHint="@color/text_description"
             android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/text_error_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/error"
+            android:text="@string/error_age"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:fontFamily="@font/mont_semibold"/>
+
         <EditText
             android:id="@+id/edit_email_signup"
             android:layout_width="match_parent"
@@ -89,6 +100,28 @@
             android:textColorHint="@color/text_description"
             android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/text_error_email_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/error"
+            android:text="@string/error_email_2"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:fontFamily="@font/mont_semibold"/>
+
+        <TextView
+            android:id="@+id/text_error_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/error"
+            android:text="@string/error_email"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:fontFamily="@font/mont_semibold"/>
+
         <EditText
             android:id="@+id/edit_password_signup"
             android:layout_width="match_parent"
@@ -105,6 +138,17 @@
             android:textColor="@color/edit_text"
             android:textColorHint="@color/text_description"
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text_error_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/error"
+            android:text="@string/error_password"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:fontFamily="@font/mont_semibold"/>
 
         <Button
             android:id="@+id/button_signup"

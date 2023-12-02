@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import ramble.sokol.inverseeducation.presentation.manager.FirstEntryManager
 import ramble.sokol.inverseeducation.presentation.manager.RetrofitHelper
 import ramble.sokol.inverseeducation.presentation.manager.TokenManager
@@ -44,13 +45,78 @@ class SignupFragment : Fragment() {
     private fun init(){
         tokenManager = TokenManager(requireActivity())
         firstEntryManager = FirstEntryManager(requireActivity())
+        val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\$"
+        val ageRegex = "-?[0-9]+(\\.[0-9]+)?".toRegex()
         binding!!.buttonToLogin.setOnClickListener {
             val fragmentTransition = parentFragmentManager.beginTransaction()
             fragmentTransition.replace(R.id.layout_fragment , LoginFragment())
             fragmentTransition.commit()
         }
         binding!!.buttonSignup.setOnClickListener {
-            signupRequest()
+            var d = 0
+            if (binding!!.editNameSignup.text.toString() == "") {
+                binding!!.editNameSignup.setBackgroundResource(R.drawable.edit_text_background_error)
+                d += 1
+            }
+            if (binding!!.editSurnameSignup.text.toString() == "") {
+                d += 1
+                binding!!.editSurnameSignup.setBackgroundResource(R.drawable.edit_text_background_error)
+            }
+            if (binding!!.editEmailSignup.text.toString() == "") {
+                d += 1
+                binding!!.editEmailSignup.setBackgroundResource(R.drawable.edit_text_background_error)
+            }
+            if (binding!!.editPasswordSignup.text.toString() == "") {
+                d += 1
+                binding!!.editPasswordSignup.setBackgroundResource(R.drawable.edit_text_background_error)
+            }
+            if (binding!!.editAgeSignup.text.toString() == ""){
+                d += 1
+                binding!!.editAgeSignup  .setBackgroundResource(R.drawable.edit_text_background_error)
+            }
+            if (!(binding!!.editEmailSignup.text.toString().matches(emailRegex.toRegex()))){
+                d += 1
+                binding!!.textErrorEmail.visibility = View.VISIBLE
+            }
+            if (binding!!.editPasswordSignup.text.toString().length < 8){
+                d += 1
+                binding!!.textErrorPassword.visibility = View.VISIBLE
+            }
+            if (!(binding!!.editAgeSignup.text.toString().matches(ageRegex))){
+                d += 1
+                binding!!.textErrorAge.visibility = View.VISIBLE
+            }
+            if (d == 0) signupRequest()
+        }
+        binding!!.editEmailSignup.setOnFocusChangeListener { view, b ->
+            notErrorEdit()
+        }
+        binding!!.editEmailSignup.addTextChangedListener {
+            notErrorEdit()
+        }
+        binding!!.editPasswordSignup.setOnFocusChangeListener { view, b ->
+            notErrorEdit()
+        }
+        binding!!.editPasswordSignup.addTextChangedListener {
+            notErrorEdit()
+        }
+        binding!!.editNameSignup.setOnFocusChangeListener { view, b ->
+            notErrorEdit()
+        }
+        binding!!.editNameSignup.addTextChangedListener {
+            notErrorEdit()
+        }
+        binding!!.editSurnameSignup.setOnFocusChangeListener { view, b ->
+            notErrorEdit()
+        }
+        binding!!.editSurnameSignup.addTextChangedListener {
+            notErrorEdit()
+        }
+        binding!!.editAgeSignup.setOnFocusChangeListener { view, b ->
+            notErrorEdit()
+        }
+        binding!!.editAgeSignup.addTextChangedListener {
+            notErrorEdit()
         }
     }
 
@@ -71,6 +137,8 @@ class SignupFragment : Fragment() {
                         "Регистрация прошла успешна",
                         Toast.LENGTH_SHORT
                     ).show()
+                }else{
+                    binding!!.textErrorEmail2.visibility = View.VISIBLE
                 }
             }
 
@@ -115,6 +183,18 @@ class SignupFragment : Fragment() {
             }
 
         })
+    }
+
+    private fun notErrorEdit(){
+        binding!!.textErrorEmail.visibility = View.GONE
+        binding!!.textErrorPassword.visibility = View.GONE
+        binding!!.textErrorAge.visibility = View.GONE
+        binding!!.textErrorEmail2.visibility = View.GONE
+        binding!!.editEmailSignup.setBackgroundResource(R.drawable.edit_text_background)
+        binding!!.editPasswordSignup.setBackgroundResource(R.drawable.edit_text_background)
+        binding!!.editSurnameSignup.setBackgroundResource(R.drawable.edit_text_background)
+        binding!!.editNameSignup.setBackgroundResource(R.drawable.edit_text_background)
+        binding!!.editAgeSignup.setBackgroundResource(R.drawable.edit_text_background)
     }
 
 }
