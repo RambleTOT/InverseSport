@@ -55,6 +55,8 @@ class LoginFragment : Fragment() {
             if ( binding!!.editLoginPassword.text.toString() == ""){
                 binding!!.editLoginPassword.setBackgroundResource(R.drawable.edit_text_background_error)
             }else if (binding!!.editLoginEmail.text.toString() != "" && binding!!.editLoginPassword.text.toString() != "" ) {
+                binding!!.buttonLogin.visibility = View.INVISIBLE
+                binding!!.progressLogin.visibility = View.VISIBLE
                 loginRequest(
                     binding!!.editLoginEmail.text.toString(),
                     binding!!.editLoginPassword.text.toString()
@@ -88,6 +90,8 @@ class LoginFragment : Fragment() {
                 call: Call<GetTokenResponse>,
                 response: Response<GetTokenResponse>
             ) {
+                binding!!.buttonLogin.visibility = View.VISIBLE
+                binding!!.progressLogin.visibility = View.GONE
                 if (response.isSuccessful) {
                     tokenManager.saveToken(response.body()!!.token.toString())
                     firstEntryManager.saveFirstEntry(true)
@@ -101,6 +105,8 @@ class LoginFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<GetTokenResponse>, t: Throwable) {
+                binding!!.buttonLogin.visibility = View.VISIBLE
+                binding!!.progressLogin.visibility = View.GONE
                 Log.d("MyLog", t.message.toString())
                 Toast.makeText(
                     activity,

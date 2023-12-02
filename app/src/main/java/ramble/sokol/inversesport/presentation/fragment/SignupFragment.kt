@@ -86,7 +86,11 @@ class SignupFragment : Fragment() {
                 d += 1
                 binding!!.textErrorAge.visibility = View.VISIBLE
             }
-            if (d == 0) signupRequest()
+            if (d == 0) {
+                binding!!.buttonSignup.visibility = View.INVISIBLE
+                binding!!.progressSignup.visibility = View.VISIBLE
+                signupRequest()
+            }
         }
         binding!!.editEmailSignup.setOnFocusChangeListener { view, b ->
             notErrorEdit()
@@ -138,11 +142,15 @@ class SignupFragment : Fragment() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }else{
+                    binding!!.buttonSignup.visibility = View.VISIBLE
+                    binding!!.progressSignup.visibility = View.GONE
                     binding!!.textErrorEmail2.visibility = View.VISIBLE
                 }
             }
 
             override fun onFailure(call: Call<UserSignupResponse>, t: Throwable) {
+                binding!!.buttonSignup.visibility = View.VISIBLE
+                binding!!.progressSignup.visibility = View.GONE
                 Log.d("MyLog", t.message.toString())
                 Toast.makeText(
                     activity,
@@ -162,6 +170,8 @@ class SignupFragment : Fragment() {
                 response: Response<GetTokenResponse>
             ) {
                 if (response.isSuccessful) {
+                    binding!!.buttonSignup.visibility = View.VISIBLE
+                    binding!!.progressSignup.visibility = View.GONE
                     tokenManager.saveToken(response.body()!!.token.toString())
                     firstEntryManager.saveFirstEntry(true)
                     val transaction = activity!!.supportFragmentManager.beginTransaction()

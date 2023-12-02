@@ -150,11 +150,15 @@
             android:visibility="gone"
             android:fontFamily="@font/mont_semibold"/>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp">
+
         <Button
             android:id="@+id/button_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:backgroundTint="@color/text_main"
             android:fontFamily="@font/mont_semibold"
             android:paddingHorizontal="16dp"
@@ -162,7 +166,21 @@
             android:text="@string/to_sign_up"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:cornerRadius="15dp" />
+            app:cornerRadius="15dp"
+            tools:ignore="MissingConstraints" />
+
+            <ProgressBar
+                android:id="@+id/progress_signup"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:theme="@style/CircularProgress"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button_signup"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/button_signup"
+                app:layout_constraintTop_toTopOf="@+id/button_signup" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

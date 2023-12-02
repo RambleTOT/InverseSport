@@ -15,7 +15,7 @@
 
     <item
         android:id="@+id/navbar_profile"
-        android:title="@string/map"
+        android:title="@string/profile"
         android:icon="@drawable/icon_profile"
         />
 </menu>
