@@ -31,7 +31,7 @@ interface ApiMethod {
     @GET("events/")
     fun getAllEvents(@Header("Authorization") token: String): Call<List<GetAllEvents>>
 
-    @GET("sections/{id}/")
+    @GET("events/{id}/")
     fun getCurrentEvent(@Path("id") id: Int, @Header("Authorization") token: String): Call<GetCurrentEvent>
 
 }

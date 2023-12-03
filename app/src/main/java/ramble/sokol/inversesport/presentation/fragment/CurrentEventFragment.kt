@@ -62,6 +62,7 @@ class CurrentEventFragment : Fragment() {
                 call: Call<GetCurrentEvent>,
                 response: Response<GetCurrentEvent>
             ) {
+                Log.d("MyLog", response.toString())
                 if (response.isSuccessful){
                     val body = response.body()
                     Picasso.get().load("https://inverse-tracker.store/${body!!.cover}").into(binding!!.imageCurrentEvent)
