@@ -1,32 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragment.ProfileFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    android:layout_marginHorizontal="32dp">
+    android:orientation="vertical"
+    tools:context=".presentation.fragment.ProfileFragment">
 
-    <ScrollView
+    <ProgressBar
+        android:id="@+id/progress_profile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:theme="@style/CircularProgress"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutEmptyProfile"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="32dp">
 
-        <LinearLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/mont_bold"
+            android:text="@string/profile"
+            android:textColor="@color/text_title"
+            android:textSize="24sp" />
+
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:src="@drawable/image_emptry_content"
+            android:adjustViewBounds="true"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginTop="50dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mont_semibold"
+            android:text="@string/empty_profile"
+            android:textColor="@color/text_main"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        tools:visibility="invisible">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_title"
-                android:text="@string/profile"
-                android:textSize="24sp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/mont_bold" />
+                android:orientation="vertical"
+                android:layout_marginHorizontal="32dp">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/mont_bold"
+                    android:text="@string/profile"
+                    android:textColor="@color/text_title"
+                    android:textSize="24sp" />
 
-    </ScrollView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="11dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/edit_text_background"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="18dp">
 
-</LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mont_semibold"
+                        android:text="@string/name"
+                        android:textColor="@color/text_description"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/name_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mont_semibold"
+                        tools:text="Иван"
+                        android:textColor="@color/text_title"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="11dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mont_semibold"
+                        android:text="@string/surname"
+                        android:textColor="@color/text_description"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/surname_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mont_semibold"
+                        tools:text="Иванов"
+                        android:textColor="@color/text_title"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="11dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mont_semibold"
+                        android:text="@string/age"
+                        android:textColor="@color/text_description"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/age_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mont_semibold"
+                        tools:text="18"
+                        android:textColor="@color/text_title"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="11dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mont_semibold"
+                        android:text="@string/email"
+                        android:textColor="@color/text_description"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/email_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mont_semibold"
+                        tools:text="ivanov_ivan@mail.ru"
+                        android:textColor="@color/text_title"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_exit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/error"
+                    android:fontFamily="@font/mont_semibold"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp"
+                    android:text="@string/exit"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="15dp"
+                    android:layout_marginTop="8dp"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

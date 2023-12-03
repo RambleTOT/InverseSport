@@ -14,9 +14,11 @@
     <string name="surname">Фамилия</string>
     <string name="age">Возраст</string>
     <string name="to_sign_up">Зарегистрироваться</string>
+    <string name="exit">Выйти</string>
     <string name="error_login">Неправильная почта или пароль</string>
     <string name="error_email">Введите корректную почту</string>
     <string name="error_email_2">Пользователь с такой почтой уже существует</string>
     <string name="error_password">Пароль должен быть больше 8 символов</string>
     <string name="error_age">Введите корректный возраст</string>
+    <string name="empty_profile">Возникли проблемы, проверьте подключение к интернету</string>
 </resources>
