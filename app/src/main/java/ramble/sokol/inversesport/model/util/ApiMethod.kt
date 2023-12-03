@@ -1,6 +1,7 @@
-package ramble.sokol.inverseeducation.data.util
+package ramble.sokol.inversesport.model.util
 
 import com.google.gson.JsonObject
+import ramble.sokol.inversesport.model.entity.GetAllEvents
 import ramble.sokol.inversesport.model.entity.GetTokenResponse
 import ramble.sokol.inversesport.model.entity.UserAccountResponse
 import ramble.sokol.inversesport.model.entity.UserLoginEntity
@@ -24,5 +25,8 @@ interface ApiMethod {
 
     @GET("users/auth/users/me/")
     fun getMyAccount(@Header("Authorization") token: String): Call<UserAccountResponse>
+
+    @GET("events/")
+    fun getAllEvents(@Header("Authorization") token: String): Call<List<GetAllEvents>>
 
 }

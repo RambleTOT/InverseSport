@@ -1,6 +1,6 @@
 package ramble.sokol.inverseeducation.presentation.manager
 
-import ramble.sokol.inverseeducation.data.util.ApiMethod
+import ramble.sokol.inversesport.model.util.ApiMethod
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -12,7 +12,7 @@ class RetrofitHelper {
 
     }
 
-    fun getApi() : ApiMethod{
+    fun getApi() : ApiMethod {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

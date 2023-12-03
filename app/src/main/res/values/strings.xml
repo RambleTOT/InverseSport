@@ -21,4 +21,6 @@
     <string name="error_password">Пароль должен быть больше 8 символов</string>
     <string name="error_age">Введите корректный возраст</string>
     <string name="empty_profile">Возникли проблемы, проверьте подключение к интернету</string>
+    <string name="empty_afisha">Нет мероприятий на этот день</string>
+    <string name="date">Дата</string>
 </resources>
