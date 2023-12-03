@@ -14,6 +14,7 @@
     <string name="surname">Фамилия</string>
     <string name="age">Возраст</string>
     <string name="to_sign_up">Зарегистрироваться</string>
+    <string name="to_event">К мероприятиям</string>
     <string name="exit">Выйти</string>
     <string name="error_login">Неправильная почта или пароль</string>
     <string name="error_email">Введите корректную почту</string>
@@ -23,4 +24,8 @@
     <string name="empty_profile">Возникли проблемы, проверьте подключение к интернету</string>
     <string name="empty_afisha">Нет мероприятий на этот день</string>
     <string name="date">Дата</string>
+    <string name="event">Мероприятие</string>
+    <string name="about_event">О мероприятии</string>
+    <string name="finish_event_title">Вы успешно зарегестрированны!</string>
+    <string name="finish_event_description">Мероприятие скоро появится во вкладке “Профиль”</string>
 </resources>

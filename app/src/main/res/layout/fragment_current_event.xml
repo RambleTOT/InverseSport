@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CurrentEventFragment"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_bar_background"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="27dp">
+
+        <ImageButton
+            android:id="@+id/button_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/icon_button_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:foreground=""/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mont_bold"
+            android:text="@string/about_event"
+            android:textColor="@color/text_title"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="32dp">
+
+            <ImageView
+                android:id="@+id/image__current_event"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/image_back"
+                tools:src="@drawable/image_splash_screen"/>
+
+            <TextView
+                android:id="@+id/title_current_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_title"
+                tools:text="Концерт джаза"
+                android:layout_marginStart="13dp"
+                android:textSize="20sp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/mont_bold" />
+
+            <TextView
+                android:id="@+id/place_date_current_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_description"
+                tools:text="8 августа · МТС Live Холл"
+                android:layout_marginStart="13dp"
+                android:textSize="17sp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/mont_semibold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_title"
+                android:text="@string/about_event"
+                android:layout_marginStart="13dp"
+                android:textSize="20sp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/mont_bold" />
+
+            <TextView
+                android:id="@+id/description_current_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_description"
+                tools:text="В настоящее время коллектив «Московский цирк на льду» под руководством Наталии Абрамовой Московского цирка Никулина на Цветном бульваре — коллектив молодых, красивых, и высокопрофессиональных артистов. Бережно сохраняя лучшие традиции"
+                android:layout_marginStart="13dp"
+                android:textSize="17sp"
+                android:lineSpacingExtra="4sp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/mont_semibold" />
+
+            <Button
+                android:id="@+id/button_signup_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/text_main"
+                android:fontFamily="@font/mont_semibold"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="16dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/to_sign_up"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="15dp"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import ramble.sokol.inverseeducation.presentation.manager.RetrofitHelper
 import ramble.sokol.inverseeducation.presentation.manager.TokenManager
+import ramble.sokol.inversesport.CurrentEventFragment
 import ramble.sokol.inversesport.R
 import ramble.sokol.inversesport.databinding.FragmentAfishaBinding
 import ramble.sokol.inversesport.databinding.FragmentBottomNavBarBinding
@@ -54,10 +55,19 @@ class AfishaFragment : Fragment() {
                 response: Response<List<GetAllEvents>>
             ) {
                 if (response.isSuccessful){
-                    val body = response.body()
                     eventsList = response.body()!!
                     binding!!.recyclerEvents.apply {
                         allEventsAdapter = AllEventsAdapter(eventsList)
+                        allEventsAdapter.onItemClick = {
+                            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                            val currentEventFragment = CurrentEventFragment()
+                            val bundle = Bundle()
+                            bundle.putInt("id", it.id!!)
+                            currentEventFragment.arguments = bundle
+                            transaction.replace(R.id.layout_fragment, currentEventFragment)
+                            transaction.disallowAddToBackStack()
+                            transaction.commit()
+                        }
                         adapter = allEventsAdapter
                         layoutManager = LinearLayoutManager(requireActivity());
 

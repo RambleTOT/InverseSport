@@ -11,6 +11,8 @@ class AllEventsAdapter (
     private val eventsList: List<GetAllEvents>
 ): RecyclerView.Adapter<AllEventsAdapter.ViewHolder>() {
 
+    var onItemClick : ((GetAllEvents) -> Unit)? = null
+
     inner class ViewHolder(val binding: ItemEventBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,7 +30,10 @@ class AllEventsAdapter (
         holder.binding.apply {
             titleEvent.text = currentItem.name
             placeDateEvent.text = "${currentItem.date} · ${currentItem.platform!!.address}"
-            Picasso.get().load("https://inverse-tracker.store/${currentItem.cover}").into(imageEvent);
+            Picasso.get().load("https://inverse-tracker.store/${currentItem.cover}").into(imageEvent)
+            holder.itemView.setOnClickListener{
+                onItemClick?.invoke(currentItem)
+            }
         }
     }
 

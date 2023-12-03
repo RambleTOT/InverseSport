@@ -2,6 +2,7 @@ package ramble.sokol.inversesport.model.util
 
 import com.google.gson.JsonObject
 import ramble.sokol.inversesport.model.entity.GetAllEvents
+import ramble.sokol.inversesport.model.entity.GetCurrentEvent
 import ramble.sokol.inversesport.model.entity.GetTokenResponse
 import ramble.sokol.inversesport.model.entity.UserAccountResponse
 import ramble.sokol.inversesport.model.entity.UserLoginEntity
@@ -12,6 +13,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiMethod {
 
@@ -28,5 +30,8 @@ interface ApiMethod {
 
     @GET("events/")
     fun getAllEvents(@Header("Authorization") token: String): Call<List<GetAllEvents>>
+
+    @GET("sections/{id}/")
+    fun getCurrentEvent(@Path("id") id: Int, @Header("Authorization") token: String): Call<GetCurrentEvent>
 
 }
