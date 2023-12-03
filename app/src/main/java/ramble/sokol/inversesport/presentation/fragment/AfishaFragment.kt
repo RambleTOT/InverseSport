@@ -10,10 +10,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import ramble.sokol.inverseeducation.presentation.manager.RetrofitHelper
 import ramble.sokol.inverseeducation.presentation.manager.TokenManager
-import ramble.sokol.inversesport.CurrentEventFragment
 import ramble.sokol.inversesport.R
 import ramble.sokol.inversesport.databinding.FragmentAfishaBinding
-import ramble.sokol.inversesport.databinding.FragmentBottomNavBarBinding
 import ramble.sokol.inversesport.model.entity.GetAllEvents
 import ramble.sokol.inversesport.presentation.adapter.AllEventsAdapter
 import retrofit2.Call

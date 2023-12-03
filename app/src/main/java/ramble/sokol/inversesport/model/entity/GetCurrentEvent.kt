@@ -13,4 +13,6 @@ data class GetCurrentEvent(
     val date: String?,
     @SerializedName("platform")
     val platform: PlatformEntity?,
+    @SerializedName("description")
+    val description: String?,
 )

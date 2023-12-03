@@ -1,10 +1,11 @@
-package ramble.sokol.inversesport
+package ramble.sokol.inversesport.presentation.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ramble.sokol.inversesport.R
 import ramble.sokol.inversesport.databinding.FragmentCurrentEventBinding
 import ramble.sokol.inversesport.databinding.FragmentFinishSignupEventBinding
 
@@ -23,6 +24,12 @@ class FinishSignupEventFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding!!.buttonToEvent.setOnClickListener{
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.layout_fragment, BottomNavBarFragment())
+            transaction.disallowAddToBackStack()
+            transaction.commit()
+        }
     }
 
 }
